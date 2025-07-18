@@ -1,0 +1,102 @@
+.ediciones {
+  width: 100%;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start !important;
+  border-bottom: 1px solid #e2593a;
+  padding-bottom: 30px;
+  img {
+    height: 70px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+  }
+  .rowEdiciones {
+    display: flex;
+    width: 100%;
+    align-items: start;
+    .edicionesBtnContainer {
+      width: 20%;
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 20px;
+      margin-top: 0px;
+      .btn {
+        background-color: #e2593a;
+        border: 0px;
+        font-family: "Libre Franklin", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 800;
+        border-radius: 14px;
+        width: fit-content;
+        padding: 4px 16px;
+        color: black;
+      }
+      .btn:hover {
+        cursor: pointer;
+        color: white;
+      }
+         .btn-big{
+        font-size: 2rem;
+        color: white;
+    }
+    }
+ 
+    .allVideos {
+      width: 100%;
+    }
+  }
+}
+
+/* Asegúrate de que el contenedor del video tenga una proporción de 16:9 */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  /* 16:9 ratio (100%/16*9 = 56.25%) */
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 3px solid #e2593a;
+  //box-shadow: 2px 2px 8px black;
+}
+
+/* Estilo para el iframe del video para que ocupe todo el contenedor */
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-big {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .ediciones{
+    >img{
+      height: 42px !important;
+      margin-left: 5px !important;
+    }
+    .rowEdiciones{
+      flex-direction: column;
+      .edicionesBtnContainer{
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        padding: 0px 5px;
+        margin-bottom: 20px;
+        .btn{
+          width: 20% !important;
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+  .video-big {
+  width: 100%;
+  margin: auto;
+}
+}

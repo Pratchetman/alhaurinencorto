@@ -1,0 +1,322 @@
+.App {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #041620;
+  padding-top: 60px;
+  position: relative;
+  background-image: radial-gradient(
+      circle at top,
+      rgba(255, 255, 255, 0.5) 0%,
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 0% 100%,
+      rgba(255, 255, 255, 0.2) 0%,
+      transparent 15%
+    ),
+    radial-gradient(
+      circle at right,
+      rgba(255, 255, 255, 0.5) 0%,
+      transparent 25%
+    );
+
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: white;
+  font-family: "Arial", sans-serif;
+  .ultimasNoticias {
+    border-top: 1px solid #e2593a;
+    padding: 40px 20px;
+    h2{
+      width: 100%;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    .newsContainer {
+      display: flex;
+      justify-content: space-around;
+      div {
+        width: 27%;
+      }
+    }
+  }
+  section {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logoImage {
+      width: 75%;
+      max-width: 1000px;
+      margin-left: -5%;
+    }
+    .bigText {
+      font-family: "Libre Franklin", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 900;
+      font-style: normal;
+      position: relative;
+      top: -11rem;
+      > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .btn {
+        position: relative;
+        background-color: #e2593a;
+        margin-top: 10px;
+        border: 0px;
+        font-family: "Libre Franklin", sans-serif;
+        font-size: 2.5rem;
+        font-weight: 800;
+        border-radius: 14px;
+        width: fit-content;
+        padding: 4px 16px;
+        color: white;
+      }
+      .btn:hover {
+        cursor: pointer;
+        color: white;
+      }
+      .logobg {
+        width: 100%;
+        margin-bottom: -140px;
+      }
+      #texto_festival_bg {
+        display: none;
+      }
+      h4 {
+        span {
+          img {
+            width: 50px;
+            position: relative;
+            left: -10px;
+          }
+        }
+        text-align: center;
+      }
+
+      .alhaurin {
+        color: #e2593a;
+        margin: 0px;
+        margin-bottom: -80px;
+        font-size: 11rem;
+      }
+      .enCorto {
+        color: white;
+        margin: 0px;
+        font-size: 12rem;
+      }
+      h2 {
+        font-size: 2.5rem;
+        color: white;
+        margin: 0;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      margin-bottom: -150px;
+    }
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: -30px;
+    > img {
+      height: 140px;
+      margin-bottom: -40px;
+    }
+
+    .basesTitle {
+      img {
+        height: 70px;
+        margin-left: 10px;
+        margin-bottom: -5px;
+        margin-top: 30px;
+      }
+      li {
+        margin: 10px;
+      }
+    }
+    p {
+      font-family: "Libre Franklin", sans-serif;
+      color: white;
+      font-size: 1.4rem;
+      margin-top: 0px;
+    }
+    details {
+      color: #e2593a;
+      width: 100%;
+      img {
+        height: 140px;
+        margin-bottom: -40px;
+      }
+      summary {
+        // Para navegadores basados en WebKit (Chrome, Safari, Edge)
+        &::-webkit-details-marker {
+          display: none !important;
+        }
+        // Para Firefox
+        &::marker {
+          display: none !important;
+        }
+        // Propiedad estándar (aunque los prefijos son más comunes)
+        list-style: none !important;
+        > div {
+          display: flex;
+          align-items: end;
+          justify-content: space-between;
+          border-bottom: 1px solid #e2593a;
+          width: 100%;
+          p {
+            font-size: 36px;
+            color: #e2593a;
+            margin: 4px;
+            font-weight: 600;
+            transition: color 0.3s ease, font-size 0.3s ease;
+          }
+        }
+      }
+      summary:hover {
+        cursor: pointer;
+      }
+    }
+    details summary p::after {
+      content: "+";
+    }
+    details[open] summary p::after {
+      content: "−";
+    }
+    li {
+      font-family: "Libre Franklin", sans-serif;
+      color: white;
+      font-size: 1.4rem;
+      margin-top: 15px;
+      a {
+        color: white !important;
+      }
+    }
+  }
+  min-height: 100vh;
+}
+details {
+  ul {
+    position: relative;
+    z-index: 2;
+    #star {
+      position: absolute;
+      height: 200px !important;
+      bottom: -20px;
+      right: -80px;
+      z-index: 1;
+      opacity: 0.2;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .App {
+    summary {
+      p {
+        position: relative;
+        bottom: -15px;
+      }
+      #cuando {
+        height: 95px !important;
+        margin-bottom: -30px !important;
+      }
+    }
+    padding: 20px !important;
+    background-image: radial-gradient(
+        circle at top,
+        rgba(255, 255, 255, 0.5) 0%,
+        transparent 15%
+      ),
+      radial-gradient(
+        circle at 0% 100%,
+        rgba(255, 255, 255, 0.2) 0%,
+        transparent 15%
+      ),
+      radial-gradient(
+        circle at right,
+        rgba(255, 255, 255, 0.3) 0%,
+        transparent 14%
+      );
+
+    .bigText {
+      .logobg {
+        margin-bottom: -30px !important;
+      }
+      top: -4rem !important;
+      margin-bottom: -20px !important;
+      .texto_festival {
+        position: relative;
+        z-index: 3;
+        .texto_festival_bg {
+          position: absolute;
+          z-index: 1;
+          width: 160px;
+          opacity: 0.3;
+          bottom: 35%;
+          left: -34px;
+        }
+        #texto_festival_bg {
+          display: block;
+        }
+      }
+      h2 {
+        position: relative;
+        z-index: 3;
+        font-size: 1.5rem !important;
+        color: white;
+        margin: 0px;
+        margin-bottom: 10px !important;
+      }
+      h4 {
+        position: relative;
+        z-index: 3;
+        span {
+          display: none;
+        }
+        font-size: 14px;
+      }
+    }
+    .info {
+      margin-top: -20px;
+      img {
+        height: 90px !important;
+        margin-left: 0px !important;
+        margin-bottom: -25px !important;
+      }
+      .basesTitle {
+        img {
+          height: 40px !important;
+          margin-left: 5px !important;
+          margin-bottom: -5px !important;
+        }
+        li {
+          margin: 10px;
+          font-size: 1.2rem !important;
+        }
+      }
+      p {
+        font-size: 1.2rem;
+      }
+      li {
+        font-size: 1.2rem !important;
+      }
+    }
+  }
+  ul {
+    #star {
+      opacity: 0.1 !important;
+      right: -110px !important;
+    }
+  }
+}

@@ -1,13 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-29GQM4K484"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-29GQM4K484");
+    </script>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
-      name="description"
-      content="Web site created using create-react-app"
+      name="Alhaurín En Corto"
+      content="XVII EDICIÓN DEL FESTIVAL DE CORTOS"
+    />
+    <meta property="og:title" content="Alhaurín En Corto" />
+    <meta
+      property="og:description"
+      content="XVII EDICIÓN DEL FESTIVAL DE CORTOS"
+    />
+    <meta
+      property="og:image"
+      content="https://firebasestorage.googleapis.com/v0/b/malagacorresponsable.appspot.com/o/alhaurin%2FAlhaur%C3%ADn%20en%20Corto%20XVII%20edici%C3%B3n%20(3)%20(1).png?alt=media&token=e2bac952-d8d1-45ae-a55c-508e8be9d641"
+    />
+    <meta
+      property="og:url"
+      content="https://alhaurin2025.asociacionarrabal.org"
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Opcional: para que también funcione bien en Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Alhaurín En Corto" />
+    <meta
+      name="twitter:description"
+      content="XVII EDICIÓN DEL FESTIVAL DE CORTOS"
+    />
+    <meta
+      name="twitter:image"
+      content="https://firebasestorage.googleapis.com/v0/b/malagacorresponsable.appspot.com/o/alhaurin%2FAlhaur%C3%ADn%20en%20Corto%20XVII%20edici%C3%B3n%20(3)%20(1).png?alt=media&token=e2bac952-d8d1-45ae-a55c-508e8be9d641"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
@@ -24,9 +64,12 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Alhaurín En Corto</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
   </head>
-  <body>
+  <body style="background-color: black">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
@@ -40,4 +83,5 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </html>
