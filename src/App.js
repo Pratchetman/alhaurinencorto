@@ -7,19 +7,22 @@ import { Footer } from "./components/footer/Footer";
 import { Button, Spinner } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Noticia } from "./components/noticias/Noticia";
 
 function App() {
   const [noticias, setNoticias] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  console.log(noticias);
 
   useEffect(() => {
     setLoading(true);
     const fetchNoticias = async () => {
       try {
         const response = await axios.get(
-          "https://asociacionarrabal.org/wp-json/wp/v2/posts?tags=1387"
+          "https://asociacionarrabal.org/wp-json/wp/v2/posts?tags=1387",
         );
-        setNoticias(response.data);
+        setNoticias(response.data.slice(0,3));
       } catch (error) {
         console.error("Error al obtener noticias:", error);
       }
@@ -35,30 +38,30 @@ function App() {
         <img
           className="logoImage"
           src="assets/images/alhaurinLogo.png"
-          alt="Logo Alhaurín En Corto"
+          alt=""
         />
         <div className="bigText">
           <img
             className="logobg"
             src="assets/images/logobg.png"
-            alt="Logo Grande"
+            alt=""
           />
           <div className="texto_festival">
             <h2>XVII EDICIÓN DEL FESTIVAL DE CORTOS</h2>
 
             <h4>
               <span>
-                <img src="assets/images/15.png" alt="estrella pequeña" />
+                <img src="assets/images/15.png" alt="" />
               </span>
               EL ÚNICO FESTIVAL DE CORTOS QUE SE CELEBRA DENTRO DE UN CENTRO
               PENITENCIARIO CON LA ASISTENCIA DE LOS DIRECTORES/AS.
             </h4>
-            <Button href="#formulario">¡PARTICIPA!</Button>
+            <Button href="#formulario" style={{marginTop: "30px"}}>¡Muy pronto nueva edición!</Button>
             <img
               className="texto_festival_bg"
               id="texto_festival_bg"
               src="assets/images/15.png"
-              alt="estrella pequeña"
+              alt=""
             />
           </div>
         </div>
@@ -102,7 +105,7 @@ function App() {
             <img
               id="star"
               src="assets/images/17.png"
-              alt="estrella hollywood"
+              alt=""
             />
             <li>
               El certamen mantiene su carácter presencial, permitiéndose el
@@ -135,28 +138,18 @@ function App() {
             <img
               id="star"
               src="assets/images/14.png"
-              alt="estrella hollywood"
+              alt=""
             />
             <li>
-              La fase final se celebrará en horario de matutino el{" "}
-              <b>25 de septiembre de 2025</b>, coincidiendo con los actos
-              conmemorativos de las <b>Fiestas de la Merced</b>, patrona de{" "}
-              <b>Instituciones Penitenciarias</b>. Se llevará a cabo una gala
-              donde el protagonismo recaerá en los internos e internas del{" "}
-              <b>Centro Penitenciario de Málaga</b>, sito en{" "}
-              <b>Alhaurín de la Torre</b>, en la que podrán descubrir nuevas
-              corrientes y formatos audiovisuales, charlar con sus autores y
-              responsables y, sobre todo, decidir cuál es la obra merecedora de
-              la estatuilla con forma de cámara que representa al festival. De
-              hecho, el trofeo que se entregará es el que ellos mismos se
-              encargan de fabricar en los talleres del centro y que se
-              acompañará de un <b>premio económico de 1.000 euros</b> que se
-              entregará al ganador o ganadora en formato <b>cheque regalo</b>{" "}
-              para la <b>compra de material audiovisual</b>.
+              La <b>XVIII edición de Alhaurín en Corto</b> se celebrará en septiembre
+              de 2026. Fecha de lanzamiento del concurso y de la presentación
+              aún por confirmar. Para más información, consulta las redes
+              sociales de @arrabalaid.
             </li>
           </ul>
         </details>
-        <details className="basesTitle">
+
+        {/* <details className="basesTitle">
           <summary>
             <div>
               <img src="assets/images/ALHAURIN-25-5.png" alt="logo festival" />
@@ -246,7 +239,7 @@ function App() {
               </a>
             </li>
           </ul>
-        </details>
+        </details> */}
       </section>
       <section>
         <Carrusel />
@@ -256,13 +249,13 @@ function App() {
         <Formulario />
       </section>
       <section className="ultimasNoticias">
-        <h2>Últimas noticias</h2>
+        <img src="./assets/images/noticias.png" alt="noticias" className="noticiasImg"/>
         {loading ? (
           <Spinner animation="grow" />
         ) : (
           <div className="newsContainer">
             {noticias.map((news, index) => {
-              return <div key={news.id}>{news.title.rendered}</div>;
+              return <Noticia  key={news.id} news={news} />;
             })}
           </div>
         )}

@@ -21,6 +21,7 @@ export const Formulario = () => {
   console.log(formData);
   const [mensaje, setMensaje] = useState("");
   const [loading, setLoading] = useState(false);
+  const [isEnabled, setIsEnabled] = useState(true)
   const handleChange = (e) => {
     const { name, value, type, checked, files } = e.target;
     if (type === "checkbox") {
@@ -213,6 +214,7 @@ export const Formulario = () => {
                   name="nombreApellidos"
                   value={formData.nombreApellidos}
                   onChange={handleChange}
+                   disabled={isEnabled}
                   required
                   placeholder="Introduce tu nombre y apellidos"
                 />
@@ -225,6 +227,7 @@ export const Formulario = () => {
                   className="form-control"
                   id="emailContacto"
                   name="emailContacto"
+                   disabled={isEnabled}
                   value={formData.emailContacto}
                   onChange={handleChange}
                   required
@@ -241,6 +244,7 @@ export const Formulario = () => {
                   id="telefonoContacto"
                   value={formData.telefonoContacto}
                   onChange={handleChange}
+                   disabled={isEnabled}
                   required
                   placeholder="Introduce tu teléfono"
                 />
@@ -255,6 +259,7 @@ export const Formulario = () => {
                   name="ciudadContacto"
                   value={formData.ciudadContacto}
                   onChange={handleChange}
+                   disabled={isEnabled}
                   required
                   placeholder="Introduce tu ciudad"
                 />
@@ -272,6 +277,7 @@ export const Formulario = () => {
                   value={formData.tituloLargometraje}
                   onChange={handleChange}
                   required
+                   disabled={isEnabled}
                   placeholder="Introduce el título del cortometraje"
                 />
               </div>
@@ -288,6 +294,7 @@ export const Formulario = () => {
                   value={formData.urlArchivo}
                   onChange={handleChange}
                   required
+                   disabled={isEnabled}
                   placeholder="Introduce la URL del archivo"
                 />
               </div>
@@ -301,6 +308,7 @@ export const Formulario = () => {
                   id="descripcionProyecto"
                   name="descripcionProyecto"
                   rows="4"
+                   disabled={isEnabled}
                   value={formData.descripcionProyecto}
                   onChange={handleChange}
                   placeholder="Introduce una descripción del proyecto"
@@ -318,6 +326,7 @@ export const Formulario = () => {
                   id="archivo"
                   name="archivo"
                   accept=".pdf"
+                   disabled={isEnabled}
                   onChange={handleChange}
                   required
                 />
@@ -329,6 +338,7 @@ export const Formulario = () => {
                   className="form-check-input"
                   id="aceptacionDatos"
                   name="aceptacionDatos"
+                  disabled={isEnabled}
                   checked={formData.aceptacionDatos}
                   onChange={handleChange}
                   required
@@ -351,7 +361,7 @@ export const Formulario = () => {
                 type="submit"
                 className="btn btn-primary mt-4"
                 style={{ backgroundColor: "#f57927", border: 0 }}
-                disabled={loading}
+                disabled={isEnabled}
               >
                 {!loading ? (
                   <p style={{ margin: 0 }}>Enviar</p>
@@ -361,7 +371,7 @@ export const Formulario = () => {
                   </div>
                 )}
               </button>
-
+              <p style={{marginTop: "15px"}}>Plazo de inscripción cerrado.</p>
               {mensaje && (
                 <p id="mensaje" style={{ marginTop: "15px", color: "white" }}>
                   {mensaje}
